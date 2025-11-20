@@ -4,7 +4,7 @@
   "description": "WebSocket server for Axiom Pulse token updates",
   "type": "module",
   "scripts": {
-    "start": "node ws-server.mjs"
+    "start": "npm i && node ws-server.mjs"
   },
   "dependencies": {
     "ws": "^8.14.2"
