@@ -1,8 +1,7 @@
 import { WebSocketServer, WebSocket } from 'ws';
 
-const wss = new WebSocketServer({ port: 3001 });
-
-console.log('Mock WebSocket server started on port 3001');
+const port = process.env.PORT || 3001; // Railway will pass correct PORT
+const wss = new WebSocketServer({ port });
 
 const TOKENS = [
     "new-1", "new-2", "new-3", "new-4", "new-5",
@@ -10,7 +9,6 @@ const TOKENS = [
     "migrated-1", "migrated-2", "migrated-3", "migrated-4", "migrated-5"
 ];
 
-// Broadcast updates every 100ms
 setInterval(() => {
     const update = {
         type: "price_update",
